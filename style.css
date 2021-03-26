@@ -12,11 +12,11 @@ body {
   text-align: right;
 }
 
-.header img {
+.header__img {
   width: 100%;
 }
 
-.header .more-inf {
+.header__link {
   font-family: fantasy, cursive;
 }
 
@@ -60,7 +60,7 @@ button {
   outline: none;
 }
 
-button {
+.btn {
   background: none;
   border: 0px;
   color: #888;
@@ -70,13 +70,12 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
   color: #3a3a3a;
 }
 
 /* Heading */
-h3,
-[for="new-task"] {
+.title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -86,7 +85,9 @@ h3,
   text-transform: uppercase;
 }
 
-[type="text"] {
+.add-task__text,
+.incomplete-task__text,
+.completed-task__text {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -99,30 +100,32 @@ h3,
   color: #888;
 }
 
-[type="text"]:focus {
+.add-task__text:focus,
+.incomplete-task__text:focus,
+.completed-task__text:focus {
   color: #333;
 }
 
 /* New Task */
-[for="new-task"] {
+.add-task__title {
   display: block;
   margin: 0 0 20px;
 }
 
-#new-task {
+.add-task__text {
   width: 318px;
 }
 
-p > button:hover {
+.add:hover {
   color: #0fc57c;
 }
 
 /* Task list */
-li {
+.incomplete-task__item,
+.completed-task__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -132,22 +135,25 @@ li > * {
   vertical-align: middle;
 }
 
-li > [type="checkbox"] {
+.incomplete-task__checkbox,
+.completed-task__checkbox {
   margin: 0 10px;
 }
 
-li > label {
+.incomplete-task__text,
+.completed-task__text {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-li > [type="text"] {
+.incomplete-task__text,
+.completed-task__text {
   width: 226px;
 }
 
-li > .delete:hover {
+.delete:hover {
   color: #cf2323;
 }
 
@@ -162,21 +168,21 @@ li > .delete:hover {
 }
 
 /* Completed */
-#completed-tasks label {
+.name_done {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-ul li [type=text] {
+.text_hidden {
   display: none;
 }
 
-ul .edit-mode [type=text] {
+.text_edit {
   display: inline-block;
   width: 224px;
 }
 
-ul .edit-mode label {
+.name_edit {
   display: none;
 }
